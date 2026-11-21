@@ -32,16 +32,10 @@ export const metadata: Metadata = {
   },
 };
 
-// Runs before first paint: motion is on unless the visitor asked the OS for less motion,
-// and an explicit choice from the switch (stored per browser) wins over both.
-const MOTION_BOOT = `(function(){try{var s=localStorage.getItem('motion');var r=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;document.documentElement.dataset.motion=s?(s==='on'?'on':'off'):(r?'off':'on');}catch(e){document.documentElement.dataset.motion='off';}})();`;
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="ko" className={`${body.variable} ${mono.variable}`} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: MOTION_BOOT }} />
-      </head>
+    // Motion is always on (owner's choice); the attribute stays so the CSS can scope every animation to it.
+    <html lang="ko" className={`${body.variable} ${mono.variable}`} data-motion="on">
       <body>{children}</body>
     </html>
   );

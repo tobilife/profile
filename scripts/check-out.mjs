@@ -39,6 +39,7 @@ const rel = (f) => relative(OUT, f).replaceAll("\\", "/");
     "data-career-years",
     "거대한 레거시를 이해하고, 오래가는 구조로 바꿉니다",
     'class="code-wall"',
+    'data-motion="on"',
     "사이드 프로젝트로 AI 에이전트 하네스를 만들고 있습니다",
   ];
   for (const text of must) if (!home.includes(text)) fail(`index.html: missing "${text}"`);

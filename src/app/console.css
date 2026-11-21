@@ -27,40 +27,6 @@
   color: var(--color-ink);
   text-decoration: underline;
 }
-/* Pause / play icon button: a small lit key on the console. */
-.motion-switch {
-  display: inline-grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  color: var(--color-accent);
-  background: var(--color-paper-2);
-  border: 1px solid var(--color-rule);
-  border-radius: 50%;
-  cursor: pointer;
-  transition:
-    border-color var(--dur-short),
-    box-shadow var(--dur-short),
-    transform var(--dur-short) var(--ease-out);
-}
-.motion-switch svg {
-  fill: currentColor;
-  filter: drop-shadow(0 0 3px var(--color-glow-strong));
-}
-.motion-switch[aria-pressed="false"] {
-  color: var(--color-muted);
-}
-.motion-switch[aria-pressed="false"] svg {
-  filter: none;
-}
-.motion-switch:hover {
-  border-color: var(--color-accent);
-  box-shadow: 0 0 10px var(--color-glow);
-}
-.motion-switch:active {
-  transform: scale(0.94);
-}
 .foot {
   margin-block: var(--space-3xl) var(--space-lg);
   padding-top: var(--space-md);
@@ -788,8 +754,7 @@ html[data-motion="on"] .log details[open] .body {
   .ticker,
   .cmd,
   .actions,
-  .more,
-  .motion-switch {
+  .more {
     display: none !important;
   }
   .hero {

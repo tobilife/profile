@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MotionSwitch } from "./MotionSwitch";
 
 export function SiteHeader() {
   return (
@@ -8,7 +7,6 @@ export function SiteHeader() {
         <Link href="/#career">경력</Link>
         <Link href="/blog/">블로그</Link>
         <Link href="/#contact">연락처</Link>
-        <MotionSwitch />
       </nav>
     </header>
   );
